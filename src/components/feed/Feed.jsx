@@ -9,6 +9,18 @@ function Feed() {
       <div className="feedWraper">
         <Share />
         <Posts />
+        <Posts />
+        <Posts />
+        <Posts />
+        <Posts />
+        <Posts />
+        <Posts />
+        <Posts />
+        <Posts />
+        <Posts />
+        <Posts />
+        <Posts />
+        <Posts />
       </div>
     </div>
   );
