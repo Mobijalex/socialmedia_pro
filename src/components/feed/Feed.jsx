@@ -6,20 +6,25 @@ import Posts from "../posts/Posts";
 // import { Postss } from "../../dummyData";
 import axios from "axios";
 
-function Feed() {
-  const [Posts, setposts] = useState([]);
+function Feed(username) {
+  const [posts, setposts] = useState([]);
 
   useEffect(() => {
-    axios.get("/timeline/");
+    const fetchposts = async () => {
+      const res = await axios.get("posts/timeline/650d64d17d031a121eb7f07c");
+      setposts(res.data);
+    };
+
+    fetchposts();
   }, []);
 
   return (
     <div className="feed">
       <div className="feedWraper">
         <Share />
-        {/* {Postss.map((p) => (
-          <Posts key={p.id} Post={p} />
-        ))} */}
+        {posts.map((p) => (
+          <Posts key={p._id} post={p} />
+        ))}
       </div>
     </div>
   );
